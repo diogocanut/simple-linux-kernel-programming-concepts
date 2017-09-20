@@ -9,6 +9,9 @@
 #include <linux/kthread.h>
 
 
+/* problema em sleep no timer e tasklet */
+
+
 /* declarando licença e autor */
 
 MODULE_LICENSE("GPL");
@@ -24,7 +27,6 @@ static void handler(unsigned long data)
   printk("entrando na função task_handler\n");
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
-  ssleep(5);
   printk("saindo da função task_handler\n");
 
 }
@@ -42,7 +44,7 @@ static void work_handler(struct work_struct *w)
   printk("entrando na função work_handler\n");
   unsigned long j = jiffies;
   pr_info("---- work_handler %u jiffies\n", (unsigned)j);
-  ssleep(5);
+  msleep(500);
   printk("saindo da função work_handler\n");
 }
 
@@ -51,7 +53,7 @@ static void delayed_work_handler(struct work_struct *w)
   printk("entrando na função delayed_work_handler\n");
   unsigned long j = jiffies;
   pr_info("---- delayed_work_handler %u jiffies\n", (unsigned)j);
-  ssleep(5);
+  msleep(500);
   printk("saindo da função delayed_work_handler\n");
 }
 
@@ -72,7 +74,6 @@ static void timer_handler(unsigned long data)
   
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
-  ssleep(5);  
   printk("saindo da função timer_handler\n");
 
 }
@@ -155,14 +156,16 @@ static void __exit tasklets_workqueues_kthreads_exit(void)
   tasklet_kill(&tasklet_handler);
 
   if(wq)
+  {
     destroy_workqueue(wq);
-
+  }
+  
   del_timer(&mytimer);
 
 
 
-    kthread_stop(td);
-    printk("Termino da thread\n");
+  kthread_stop(td);
+  printk("Termino da thread\n");
 
   printk("FIM!\n");
 
