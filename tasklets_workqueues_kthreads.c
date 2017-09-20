@@ -6,6 +6,7 @@
 #include <linux/workqueue.h>
 #include <linux/timer.h>
 #include <linux/jiffies.h>
+#include <linux/kthread.h>
 
 
 /* declarando licença e autor */
@@ -21,7 +22,8 @@ static void handler(unsigned long data)
 {
 
   printk("entrando na função task_handler\n");
-
+  unsigned long j = jiffies;
+  pr_info("---- task_handler %u jiffies\n", (unsigned)j);
   printk("saindo da função task_handler\n");
 
 }
@@ -74,6 +76,19 @@ static void timer_handler(unsigned long data)
 
 }
 
+/* KTHREAD */
+
+static struct task_struct *td;
+
+static int thread_handler(void *data)
+{
+  printk("inicio da função thread_handler\n");
+  msleep(5);
+  printk("saindo da função thread_handler\n");
+  do_exit(0);
+  return 0;
+}
+
 
 
 /* INIT */
@@ -88,15 +103,18 @@ static int __init tasklets_workqueues_kthreads_init(void)
    /* TASKLET */
 
   tasklet_schedule(&tasklet_handler);
+
+  printk("Chamada tasklet realizada\n");
 	
+
   /* WORKQUEUE */
 
-	if (!wq)
+	if(!wq)
   {
     wq = create_workqueue("mykmod");
 	}
   
-  if (wq)
+  if(wq)
   {
     queue_work(wq, &mykmod_work);
     queue_delayed_work(wq, &mykmod_delayed_work, 5000);
@@ -109,7 +127,19 @@ static int __init tasklets_workqueues_kthreads_init(void)
   mod_timer(&mytimer, jiffies + (5*onesec));
 
 
+  /* KTHREAD */
 
+
+  td = kthread_run(thread_handler, NULL, "mythread");
+  if(td)
+    printk("thread criada com sucesso!\n");
+  else
+    printk("falha na criação da thread\n");
+
+
+
+
+  printk("Função init terminada\n");
   return 0;
 }
 
@@ -118,11 +148,18 @@ static void __exit tasklets_workqueues_kthreads_exit(void)
 {
   tasklet_kill(&tasklet_handler);
 
-  if (wq)
-        destroy_workqueue(wq);
-  printk("FIM!\n");
+  if(wq)
+    destroy_workqueue(wq);
 
   del_timer(&mytimer);
+
+
+  if(td)
+  {
+    kthread_stop(td);
+    printk("Termino da thread\n");
+  }
+  printk("FIM!\n");
 
 }
 
