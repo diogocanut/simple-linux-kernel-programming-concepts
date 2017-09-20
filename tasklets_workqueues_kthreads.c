@@ -24,6 +24,7 @@ static void handler(unsigned long data)
   printk("entrando na função task_handler\n");
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
+  ssleep(5);
   printk("saindo da função task_handler\n");
 
 }
@@ -41,7 +42,7 @@ static void work_handler(struct work_struct *w)
   printk("entrando na função work_handler\n");
   unsigned long j = jiffies;
   pr_info("---- work_handler %u jiffies\n", (unsigned)j);
-  msleep(500);
+  ssleep(5);
   printk("saindo da função work_handler\n");
 }
 
@@ -50,7 +51,7 @@ static void delayed_work_handler(struct work_struct *w)
   printk("entrando na função delayed_work_handler\n");
   unsigned long j = jiffies;
   pr_info("---- delayed_work_handler %u jiffies\n", (unsigned)j);
-  msleep(500);
+  ssleep(5);
   printk("saindo da função delayed_work_handler\n");
 }
 
@@ -71,19 +72,21 @@ static void timer_handler(unsigned long data)
   
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
-  
+  ssleep(5);  
   printk("saindo da função timer_handler\n");
 
 }
 
 /* KTHREAD */
 
-static struct task_struct *td;
+static struct task_struct *td, *td_cpu;
 
 static int thread_handler(void *data)
 {
   printk("inicio da função thread_handler\n");
-  msleep(5);
+  unsigned long j = jiffies;
+  pr_info("---- thread_handler %u jiffies\n", (unsigned)j);
+  ssleep(5);
   printk("saindo da função thread_handler\n");
   do_exit(0);
   return 0;
@@ -136,6 +139,9 @@ static int __init tasklets_workqueues_kthreads_init(void)
   else
     printk("falha na criação da thread\n");
 
+  /* kthread_bind  !! */
+
+
 
 
 
@@ -154,11 +160,10 @@ static void __exit tasklets_workqueues_kthreads_exit(void)
   del_timer(&mytimer);
 
 
-  if(td)
-  {
+
     kthread_stop(td);
     printk("Termino da thread\n");
-  }
+
   printk("FIM!\n");
 
 }
