@@ -1,16 +1,16 @@
-cmd_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := gcc -Wp,-MD,/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/.tasklets_workqueues_kthreads.mod.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-linux-gnu/5/include  -I./arch/x86/include -I./arch/x86/include/generated/uapi -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -Iubuntu/include  -D__KERNEL__ -fno-pie -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -fno-pie -no-pie -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -maccumulate-outgoing-args -DCONFIG_X86_X32_ABI -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-maybe-uninitialized -O2 --param=allow-store-data-races=0 -Wframe-larger-than=1024 -fstack-protector-strong -Wno-unused-but-set-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -Werror=incompatible-pointer-types -DCC_HAVE_ASM_GOTO  -DKBUILD_BASENAME='"tasklets_workqueues_kthreads.mod"'  -DKBUILD_MODNAME='"tasklets_workqueues_kthreads"' -DMODULE  -c -o /home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o /home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.c
+cmd_/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := gcc -Wp,-MD,/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/.tasklets_workqueues_kthreads.mod.o.d  -nostdinc -isystem /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include -I./arch/x86/include -I./arch/x86/include/generated/uapi -I./arch/x86/include/generated  -I./include -I./arch/x86/include/uapi -I./include/uapi -I./include/generated/uapi -include ./include/linux/kconfig.h -D__KERNEL__ -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs -fno-strict-aliasing -fno-common -Werror-implicit-function-declaration -Wno-format-security -std=gnu89 -fno-PIE -mno-sse -mno-mmx -mno-sse2 -mno-3dnow -mno-avx -m64 -falign-jumps=1 -falign-loops=1 -mno-80387 -mno-fp-ret-in-387 -mpreferred-stack-boundary=3 -mskip-rax-setup -mtune=generic -mno-red-zone -mcmodel=kernel -funit-at-a-time -DCONFIG_AS_CFI=1 -DCONFIG_AS_CFI_SIGNAL_FRAME=1 -DCONFIG_AS_CFI_SECTIONS=1 -DCONFIG_AS_FXSAVEQ=1 -DCONFIG_AS_SSSE3=1 -DCONFIG_AS_CRC32=1 -DCONFIG_AS_AVX=1 -DCONFIG_AS_AVX2=1 -DCONFIG_AS_AVX512=1 -DCONFIG_AS_SHA1_NI=1 -DCONFIG_AS_SHA256_NI=1 -pipe -Wno-sign-compare -fno-asynchronous-unwind-tables -fno-delete-null-pointer-checks -Wno-frame-address -Wno-format-truncation -Wno-format-overflow -Wno-int-in-bool-context -O2 --param=allow-store-data-races=0 -DCC_HAVE_ASM_GOTO -Wframe-larger-than=2048 -fstack-protector-strong -Wno-unused-but-set-variable -Wno-unused-const-variable -fno-omit-frame-pointer -fno-optimize-sibling-calls -fno-var-tracking-assignments -pg -mfentry -DCC_USING_FENTRY -Wdeclaration-after-statement -Wno-pointer-sign -fno-strict-overflow -fconserve-stack -Werror=implicit-int -Werror=strict-prototypes -Werror=date-time -Werror=incompatible-pointer-types -Werror=designated-init  -DKBUILD_BASENAME='"tasklets_workqueues_kthreads.mod"'  -DKBUILD_MODNAME='"tasklets_workqueues_kthreads"' -DMODULE  -c -o /home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o /home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.c
 
-source_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := /home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.c
+source_/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := /home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.c
 
-deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := \
+deps_/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o := \
     $(wildcard include/config/module/unload.h) \
   include/linux/module.h \
     $(wildcard include/config/modules.h) \
     $(wildcard include/config/sysfs.h) \
-    $(wildcard include/config/module/sig.h) \
     $(wildcard include/config/modules/tree/lookup.h) \
     $(wildcard include/config/livepatch.h) \
     $(wildcard include/config/unused/symbols.h) \
+    $(wildcard include/config/module/sig.h) \
     $(wildcard include/config/generic/bug.h) \
     $(wildcard include/config/kallsyms.h) \
     $(wildcard include/config/smp.h) \
@@ -19,7 +19,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/event/tracing.h) \
     $(wildcard include/config/ftrace/mcount/record.h) \
     $(wildcard include/config/constructors.h) \
-    $(wildcard include/config/debug/set/module/ronx.h) \
+    $(wildcard include/config/strict/module/rwx.h) \
   include/linux/list.h \
     $(wildcard include/config/debug/list.h) \
   include/linux/types.h \
@@ -47,11 +47,11 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/kasan.h) \
     $(wildcard include/config/enable/must/check.h) \
     $(wildcard include/config/enable/warn/deprecated.h) \
-    $(wildcard include/config/kprobes.h) \
   include/linux/compiler-gcc.h \
     $(wildcard include/config/arch/supports/optimized/inlining.h) \
     $(wildcard include/config/optimize/inlining.h) \
     $(wildcard include/config/gcov/kernel.h) \
+    $(wildcard include/config/stack/validation.h) \
     $(wildcard include/config/arch/use/builtin/bswap.h) \
   arch/x86/include/asm/posix_types.h \
     $(wildcard include/config/x86/32.h) \
@@ -67,12 +67,13 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/mmu.h) \
     $(wildcard include/config/prove/locking.h) \
     $(wildcard include/config/panic/timeout.h) \
-  /usr/lib/gcc/x86_64-linux-gnu/5/include/stdarg.h \
+  /usr/lib/gcc/x86_64-pc-linux-gnu/7.1.1/include/stdarg.h \
   include/linux/linkage.h \
   include/linux/stringify.h \
   include/linux/export.h \
     $(wildcard include/config/have/underscore/symbol/prefix.h) \
     $(wildcard include/config/modversions.h) \
+    $(wildcard include/config/module/rel/crcs.h) \
     $(wildcard include/config/trim/unused/ksyms.h) \
   arch/x86/include/asm/linkage.h \
     $(wildcard include/config/x86/64.h) \
@@ -101,6 +102,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/x86/cmpxchg64.h) \
     $(wildcard include/config/x86/use/3dnow.h) \
     $(wildcard include/config/matom.h) \
+    $(wildcard include/config/x86/5level.h) \
     $(wildcard include/config/paravirt.h) \
   arch/x86/include/asm/disabled-features.h \
     $(wildcard include/config/x86/intel/mpx.h) \
@@ -121,14 +123,13 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/typecheck.h \
   include/linux/printk.h \
     $(wildcard include/config/message/loglevel/default.h) \
+    $(wildcard include/config/console/loglevel/default.h) \
     $(wildcard include/config/early/printk.h) \
     $(wildcard include/config/printk/nmi.h) \
     $(wildcard include/config/printk.h) \
     $(wildcard include/config/dynamic/debug.h) \
   include/linux/init.h \
-    $(wildcard include/config/broken/rodata.h) \
-    $(wildcard include/config/debug/rodata.h) \
-    $(wildcard include/config/lto.h) \
+    $(wildcard include/config/strict/kernel/rwx.h) \
   include/linux/kern_levels.h \
   include/linux/cache.h \
     $(wildcard include/config/arch/has/cache/line/size.h) \
@@ -169,16 +170,20 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/percpu-defs.h \
     $(wildcard include/config/debug/force/weak/per/cpu.h) \
   include/linux/thread_info.h \
-    $(wildcard include/config/compat.h) \
+    $(wildcard include/config/thread/info/in/task.h) \
     $(wildcard include/config/debug/stack/usage.h) \
     $(wildcard include/config/have/arch/within/stack/frames.h) \
     $(wildcard include/config/hardened/usercopy.h) \
   include/linux/bug.h \
+    $(wildcard include/config/bug/on/data/corruption.h) \
   arch/x86/include/asm/bug.h \
     $(wildcard include/config/debug/bugverbose.h) \
   include/asm-generic/bug.h \
     $(wildcard include/config/bug.h) \
     $(wildcard include/config/generic/bug/relative/pointers.h) \
+  include/linux/restart_block.h \
+    $(wildcard include/config/compat.h) \
+  arch/x86/include/asm/current.h \
   arch/x86/include/asm/thread_info.h \
     $(wildcard include/config/vm86.h) \
     $(wildcard include/config/frame/pointer.h) \
@@ -207,7 +212,6 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/x86/fast/feature/tests.h) \
   arch/x86/include/asm/processor.h \
     $(wildcard include/config/cc/stackprotector.h) \
-    $(wildcard include/config/m486.h) \
     $(wildcard include/config/x86/debugctlmsr.h) \
     $(wildcard include/config/xen.h) \
   arch/x86/include/asm/processor-flags.h \
@@ -220,7 +224,6 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   arch/x86/include/uapi/asm/ptrace-abi.h \
   arch/x86/include/asm/paravirt_types.h \
     $(wildcard include/config/pgtable/levels.h) \
-    $(wildcard include/config/queued/spinlocks.h) \
     $(wildcard include/config/paravirt/debug.h) \
   arch/x86/include/asm/desc_defs.h \
   arch/x86/include/asm/kmap_types.h \
@@ -232,15 +235,16 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/proc/fs.h) \
   arch/x86/include/asm/pgtable_64_types.h \
   arch/x86/include/asm/sparsemem.h \
+  include/asm-generic/pgtable-nop4d.h \
   arch/x86/include/asm/spinlock_types.h \
     $(wildcard include/config/paravirt/spinlocks.h) \
   include/asm-generic/qspinlock_types.h \
   include/asm-generic/qrwlock_types.h \
   include/asm-generic/ptrace.h \
   arch/x86/include/uapi/asm/sigcontext.h \
-  arch/x86/include/asm/current.h \
   arch/x86/include/asm/msr.h \
   arch/x86/include/asm/msr-index.h \
+    $(wildcard include/config/control.h) \
     $(wildcard include/config/tdp/nominal.h) \
     $(wildcard include/config/tdp/level/1.h) \
     $(wildcard include/config/tdp/level/2.h) \
@@ -260,6 +264,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/uapi/linux/string.h \
   arch/x86/include/asm/string.h \
   arch/x86/include/asm/string_64.h \
+    $(wildcard include/config/x86/mce.h) \
   arch/x86/include/uapi/asm/msr.h \
   include/uapi/linux/ioctl.h \
   arch/x86/include/uapi/asm/ioctl.h \
@@ -393,14 +398,19 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/errno.h \
   include/uapi/linux/errno.h \
   include/linux/mutex.h \
-    $(wildcard include/config/debug/mutexes.h) \
     $(wildcard include/config/mutex/spin/on/owner.h) \
+    $(wildcard include/config/debug/mutexes.h) \
   include/linux/osq_lock.h \
+  include/linux/debug_locks.h \
+    $(wildcard include/config/debug/locking/api/selftests.h) \
   include/linux/rwsem.h \
     $(wildcard include/config/rwsem/spin/on/owner.h) \
     $(wildcard include/config/rwsem/generic/spinlock.h) \
   arch/x86/include/asm/rwsem.h \
   include/linux/srcu.h \
+    $(wildcard include/config/tiny/srcu.h) \
+    $(wildcard include/config/tree/srcu.h) \
+    $(wildcard include/config/classic/srcu.h) \
   include/linux/rcupdate.h \
     $(wildcard include/config/tiny/rcu.h) \
     $(wildcard include/config/tree/rcu.h) \
@@ -415,7 +425,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/rcu/boost.h) \
     $(wildcard include/config/rcu/nocb/cpu/all.h) \
     $(wildcard include/config/no/hz/full/sysidle.h) \
-  include/linux/completion.h \
+    $(wildcard include/config/arch/weak/release/acquire.h) \
   include/linux/debugobjects.h \
     $(wildcard include/config/debug/objects.h) \
     $(wildcard include/config/debug/objects/free.h) \
@@ -439,19 +449,19 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/freezer.h) \
     $(wildcard include/config/wq/watchdog.h) \
   include/linux/timer.h \
-    $(wildcard include/config/timer/stats.h) \
     $(wildcard include/config/debug/objects/timers.h) \
     $(wildcard include/config/no/hz/common.h) \
-  include/linux/sysctl.h \
-    $(wildcard include/config/sysctl.h) \
-  include/linux/rbtree.h \
-  include/uapi/linux/sysctl.h \
+  include/linux/rcu_segcblist.h \
+  include/linux/srcutree.h \
+  include/linux/rcu_node_tree.h \
+    $(wildcard include/config/rcu/fanout.h) \
+    $(wildcard include/config/rcu/fanout/leaf.h) \
+  include/linux/completion.h \
   arch/x86/include/asm/mmzone.h \
   arch/x86/include/asm/mmzone_64.h \
   arch/x86/include/asm/smp.h \
     $(wildcard include/config/x86/local/apic.h) \
     $(wildcard include/config/x86/io/apic.h) \
-    $(wildcard include/config/x86/32/smp.h) \
     $(wildcard include/config/debug/nmi/selftest.h) \
   arch/x86/include/asm/mpspec.h \
     $(wildcard include/config/eisa.h) \
@@ -465,13 +475,6 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/uapi/linux/apm_bios.h \
   include/linux/edd.h \
   include/uapi/linux/edd.h \
-  arch/x86/include/asm/e820.h \
-    $(wildcard include/config/efi.h) \
-    $(wildcard include/config/hibernation.h) \
-  arch/x86/include/uapi/asm/e820.h \
-    $(wildcard include/config/x86/pmem/legacy.h) \
-    $(wildcard include/config/intel/txt.h) \
-  include/linux/ioport.h \
   arch/x86/include/asm/ist.h \
   arch/x86/include/uapi/asm/ist.h \
   include/video/edid.h \
@@ -480,15 +483,11 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   arch/x86/include/asm/apicdef.h \
   arch/x86/include/asm/apic.h \
     $(wildcard include/config/x86/x2apic.h) \
-  include/linux/pm.h \
-    $(wildcard include/config/vt/console/sleep.h) \
-    $(wildcard include/config/pm.h) \
-    $(wildcard include/config/pm/clk.h) \
-    $(wildcard include/config/pm/generic/domains.h) \
   arch/x86/include/asm/fixmap.h \
     $(wildcard include/config/provide/ohci1394/dma/init.h) \
     $(wildcard include/config/pci/mmconfig.h) \
     $(wildcard include/config/x86/intel/mid.h) \
+    $(wildcard include/config/intel/txt.h) \
   arch/x86/include/asm/acpi.h \
     $(wildcard include/config/acpi/apei.h) \
     $(wildcard include/config/acpi.h) \
@@ -497,6 +496,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   arch/x86/include/asm/numa.h \
     $(wildcard include/config/numa/emu.h) \
   arch/x86/include/asm/topology.h \
+    $(wildcard include/config/sched/mc/prio.h) \
   include/asm-generic/topology.h \
   arch/x86/include/asm/mmu.h \
     $(wildcard include/config/modify/ldt/syscall.h) \
@@ -504,6 +504,7 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
     $(wildcard include/config/acpi/sleep.h) \
   arch/x86/include/asm/io.h \
     $(wildcard include/config/mtrr.h) \
+    $(wildcard include/config/x86/pat.h) \
   arch/x86/include/generated/asm/early_ioremap.h \
   include/asm-generic/early_ioremap.h \
     $(wildcard include/config/generic/early/ioremap.h) \
@@ -522,11 +523,8 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   arch/x86/include/asm/xen/interface_64.h \
   arch/x86/include/asm/pvclock-abi.h \
   arch/x86/include/asm/xen/hypervisor.h \
-  include/xen/features.h \
-  include/xen/interface/features.h \
   arch/x86/include/uapi/asm/vsyscall.h \
   include/asm-generic/fixmap.h \
-  arch/x86/include/asm/idle.h \
   arch/x86/include/asm/io_apic.h \
   arch/x86/include/asm/irq_vectors.h \
     $(wildcard include/config/have/kvm.h) \
@@ -541,6 +539,10 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/percpu.h \
     $(wildcard include/config/need/per/cpu/embed/first/chunk.h) \
     $(wildcard include/config/need/per/cpu/page/first/chunk.h) \
+  include/linux/sysctl.h \
+    $(wildcard include/config/sysctl.h) \
+  include/linux/rbtree.h \
+  include/uapi/linux/sysctl.h \
   include/linux/elf.h \
   arch/x86/include/asm/elf.h \
     $(wildcard include/config/x86/x32/abi.h) \
@@ -550,13 +552,16 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   arch/x86/include/asm/vdso.h \
     $(wildcard include/config/x86/x32.h) \
   include/linux/mm_types.h \
-    $(wildcard include/config/split/ptlock/cpus.h) \
-    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
     $(wildcard include/config/have/cmpxchg/double.h) \
     $(wildcard include/config/have/aligned/struct/page.h) \
     $(wildcard include/config/userfaultfd.h) \
+    $(wildcard include/config/have/arch/compat/mmap/bases.h) \
     $(wildcard include/config/aio.h) \
     $(wildcard include/config/mmu/notifier.h) \
+    $(wildcard include/config/arch/want/batched/unmap/tlb/flush.h) \
+  include/linux/mm_types_task.h \
+    $(wildcard include/config/split/ptlock/cpus.h) \
+    $(wildcard include/config/arch/enable/split/pmd/ptlock.h) \
   include/linux/auxvec.h \
   include/uapi/linux/auxvec.h \
   include/linux/uprobes.h \
@@ -571,15 +576,18 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/kernfs.h \
     $(wildcard include/config/kernfs.h) \
   include/linux/idr.h \
+  include/linux/radix-tree.h \
+    $(wildcard include/config/radix/tree/multiorder.h) \
   include/linux/kobject_ns.h \
   include/linux/kref.h \
+  include/linux/refcount.h \
   include/linux/moduleparam.h \
     $(wildcard include/config/alpha.h) \
     $(wildcard include/config/ia64.h) \
     $(wildcard include/config/ppc64.h) \
-  include/linux/extable.h \
   include/linux/rbtree_latch.h \
   arch/x86/include/asm/module.h \
+    $(wildcard include/config/m486.h) \
     $(wildcard include/config/m586.h) \
     $(wildcard include/config/m586tsc.h) \
     $(wildcard include/config/m586mmx.h) \
@@ -608,6 +616,6 @@ deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_wo
   include/linux/vermagic.h \
   include/generated/utsrelease.h \
 
-/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o: $(deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o)
+/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o: $(deps_/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o)
 
-$(deps_/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o):
+$(deps_/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.mod.o):
