@@ -7,7 +7,7 @@
 #include <linux/timer.h>
 #include <linux/jiffies.h>
 #include <linux/kthread.h>
-
+#include <asm/topology.h>
 
 /* problema em sleep no timer e tasklet */
 
@@ -47,6 +47,7 @@ static void work_handler(struct work_struct *w)
   msleep(500);
   printk("saindo da função work_handler\n");
 }
+
 
 static void delayed_work_handler(struct work_struct *w)
 {
@@ -93,6 +94,17 @@ static int thread_handler(void *data)
   return 0;
 }
 
+static int thread_cpu_handler(void *data)
+{
+  printk("inicio da função thread_cpu_handler\n");
+  unsigned long j = jiffies;
+  pr_info("---- thread_cpu_handler %u jiffies\n", (unsigned)j);
+  ssleep(5);
+  printk("saindo da função thread_cpu_handler\n");
+  do_exit(0);
+  return 0;
+}
+
 
 
 /* INIT */
@@ -102,7 +114,7 @@ static int __init tasklets_workqueues_kthreads_init(void)
   unsigned long j = jiffies;
   onesec = msecs_to_jiffies(1000 * 1);
 
-  pr_info("----Inicio da função init -- %u/%u \n", (unsigned)j, (unsigned)onesec);
+  pr_info("----Inicio da função init -- %u \n", (unsigned)j);
 
    /* TASKLET */
 
@@ -125,24 +137,40 @@ static int __init tasklets_workqueues_kthreads_init(void)
 
   }
   
+  printk("Chamada workqueue realizada\n");
 
   /* TIMER */
 
   mod_timer(&mytimer, jiffies + (5*onesec));
 
+  printk("Chamada mod_timer realizada\n");
 
   /* KTHREAD */
 
 
-  td = kthread_run(thread_handler, NULL, "mythread");
+  td = kthread_run(thread_handler, 0, "mythread");
   if(td)
+  {
     printk("thread criada com sucesso!\n");
+  }
   else
+  {
     printk("falha na criação da thread\n");
+  }
 
   /* kthread_bind  !! */
 
-
+  
+  td_cpu = kthread_create_on_node(thread_cpu_handler, 0, cpu_to_node(1), "mycputhread");
+  if(td_cpu)
+  {
+    printk("thread criada com sucesso para executar na cpu 1!\n");
+    wake_up_process(td_cpu);
+  }
+  else
+  {
+    printk("falha na criação da thread para executar na cpu 1!\n");
+  }
 
 
 
@@ -153,6 +181,8 @@ static int __init tasklets_workqueues_kthreads_init(void)
 
 static void __exit tasklets_workqueues_kthreads_exit(void)
 {
+
+
   tasklet_kill(&tasklet_handler);
 
   if(wq)
@@ -163,9 +193,6 @@ static void __exit tasklets_workqueues_kthreads_exit(void)
   del_timer(&mytimer);
 
 
-
-  kthread_stop(td);
-  printk("Termino da thread\n");
 
   printk("FIM!\n");
 
