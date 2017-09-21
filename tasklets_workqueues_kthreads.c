@@ -51,19 +51,20 @@ static DECLARE_DELAYED_WORK(mykmod_delayed_work, delayed_work_handler);
 
 static int __init tasklets_workqueues_kthreads_init(void)
 {
-  printk("inicio da init\n");
+  printk("função init - chamada da tasklet\n");
   tasklet_schedule(&tasklet_handler);
-  printk("final da init\n");
+  printk("função init - terminada a chamada da tasklet\n");
+
 
 	/* WORKQUEUE */
-
+  	printk("função init - chamada das funções de workqueue\n");
 	if (!wq)
-	        wq = create_workqueue("mykmod");
+	  wq = create_workqueue("mykmod");
 	if (wq)
-	        queue_work(wq, &mykmod_work);
-	    	queue_delayed_work(wq, &mykmod_delayed_work, 5000);
+	  queue_work(wq, &mykmod_work);
+	  queue_delayed_work(wq, &mykmod_delayed_work, 5000);
 
-
+  printk("função init - terminada a chamada das funções de workqueue\n");
 
   return 0;
 }
