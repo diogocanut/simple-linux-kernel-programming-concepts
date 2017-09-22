@@ -21,18 +21,15 @@ static unsigned long onesec;
 
 /* HANDLER */
 
-static void handler(unsigned long data)
+static void task_handler(unsigned long data)
 {
 
-  printk("entrando na função task_handler\n");
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
-  printk("saindo da função task_handler\n");
 
 }
 
-
-DECLARE_TASKLET(tasklet_handler, handler, 0);
+DECLARE_TASKLET(tasklet_handler, task_handler, 0);
 
 /* WORKQUEUE */
 
@@ -41,66 +38,63 @@ struct workqueue_struct *wq = 0;
 
 static void work_handler(struct work_struct *w)
 {
-  printk("entrando na função work_handler\n");
+
   unsigned long j = jiffies;
   pr_info("---- work_handler %u jiffies\n", (unsigned)j);
   msleep(500);
-  printk("saindo da função work_handler\n");
+
 }
 
 
 static void delayed_work_handler(struct work_struct *w)
 {
-  printk("entrando na função delayed_work_handler\n");
+
   unsigned long j = jiffies;
   pr_info("---- delayed_work_handler %u jiffies\n", (unsigned)j);
   msleep(500);
-  printk("saindo da função delayed_work_handler\n");
+
 }
 
 
-static DECLARE_WORK(mykmod_work, work_handler); 
-static DECLARE_DELAYED_WORK(mykmod_delayed_work, delayed_work_handler);
+static DECLARE_WORK(workqueue_handler, work_handler); 
+static DECLARE_DELAYED_WORK(delayed_workqueue_handler, delayed_work_handler);
 
 
 /* KERNEL TIMER */
 
-static void timer_handler(unsigned long data);
-DEFINE_TIMER(mytimer, timer_handler, 0, 0);
 
-static void timer_handler(unsigned long data)
+static void t_handler(unsigned long data)
 {
 
-  printk("entrando na função timer_handler\n");
-  
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
-  printk("saindo da função timer_handler\n");
 
 }
+
+
+DEFINE_TIMER(timer_handler, t_handler, 0, 0);
+
 
 /* KTHREAD */
 
 static struct task_struct *td, *td_cpu;
 
+
 static int thread_handler(void *data)
 {
-  printk("inicio da função thread_handler\n");
   unsigned long j = jiffies;
   pr_info("---- thread_handler %u jiffies\n", (unsigned)j);
   ssleep(5);
-  printk("saindo da função thread_handler\n");
   do_exit(0);
   return 0;
 }
 
+
 static int thread_cpu_handler(void *data)
 {
-  printk("inicio da função thread_cpu_handler\n");
   unsigned long j = jiffies;
   pr_info("---- thread_cpu_handler %u jiffies\n", (unsigned)j);
   ssleep(5);
-  printk("saindo da função thread_cpu_handler\n");
   do_exit(0);
   return 0;
 }
@@ -120,35 +114,31 @@ static int __init tasklets_workqueues_kthreads_init(void)
 
   tasklet_schedule(&tasklet_handler);
 
-  printk("Chamada tasklet realizada\n");
 	
-
   /* WORKQUEUE */
 
 	if(!wq)
   {
-    wq = create_workqueue("mykmod");
+    wq = create_workqueue("workqueue_handler");
 	}
   
   if(wq)
   {
-    queue_work(wq, &mykmod_work);
-    queue_delayed_work(wq, &mykmod_delayed_work, 5000);
+    queue_work(wq, &workqueue_handler);
+    queue_delayed_work(wq, &delayed_workqueue_handler, 5000);
 
   }
-  
-  printk("Chamada workqueue realizada\n");
+
 
   /* TIMER */
 
-  mod_timer(&mytimer, jiffies + (5*onesec));
+  mod_timer(&timer_handler, jiffies + (5*onesec));
 
-  printk("Chamada mod_timer realizada\n");
 
   /* KTHREAD */
 
 
-  td = kthread_run(thread_handler, 0, "mythread");
+  td = kthread_run(thread_handler, 0, "thread_handler");
   if(td)
   {
     printk("thread criada com sucesso!\n");
@@ -161,7 +151,7 @@ static int __init tasklets_workqueues_kthreads_init(void)
   /* kthread_bind  !! */
 
   
-  td_cpu = kthread_create_on_node(thread_cpu_handler, 0, cpu_to_node(1), "mycputhread");
+  td_cpu = kthread_create_on_node(thread_cpu_handler, 0, cpu_to_node(1), "cpu_thread_handler");
   if(td_cpu)
   {
     printk("thread criada com sucesso para executar na cpu 1!\n");
@@ -190,7 +180,7 @@ static void __exit tasklets_workqueues_kthreads_exit(void)
     destroy_workqueue(wq);
   }
   
-  del_timer(&mytimer);
+  del_timer(&timer_handler);
 
 
 

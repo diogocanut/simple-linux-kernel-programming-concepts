@@ -1,3 +1,3 @@
-/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.ko
-/home/knut/Documents/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.o
+/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.ko
+/home/knute/Documentos/tasklets-workqueues-kthread--kernel-module/tasklets_workqueues_kthreads.o
 
