@@ -26,6 +26,7 @@ static void task_handler(unsigned long data)
 
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
+  mdelay(500);
 
 }
 
@@ -68,7 +69,7 @@ static void t_handler(unsigned long data)
 
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
-
+  mdelay(500);
 }
 
 
