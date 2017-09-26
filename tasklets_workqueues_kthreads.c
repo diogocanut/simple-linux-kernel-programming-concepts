@@ -12,7 +12,7 @@
 /* problema em sleep no timer e tasklet */
 
 
-/* declarando licença e autor */
+/* declarando licenca e autor */
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Diogo Canut F. P.");
@@ -24,13 +24,13 @@ static unsigned long onesec;
 
 static void task_handler(unsigned long data)
 {
-  /* FUNÇÃO UTILIZADA PELO HANDLER */
+  /* FUNÇAO UTILIZADA PELO HANDLER */
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
 
 }
 
-/* DECLARANDO UMA TASKLET DE NOME TASKLET_HANDLER PARA EXECUTAR A FUNÇÃO
+/* DECLARANDO UMA TASKLET DE NOME TASKLET_HANDLER PARA EXECUTAR A FUNÇAO
 TASK_HANDLER, RECEBENDO 0 NO CAMPO DATA */
 DECLARE_TASKLET(tasklet_handler, task_handler, 0);
 
@@ -42,7 +42,7 @@ struct workqueue_struct *wq = 0;
 
 static void work_handler(struct work_struct *w)
 {
-  /* FUNÇÃO UTILIZADA PELO WORK_HANDLER */
+  /* FUNÇAO UTILIZADA PELO WORK_HANDLER */
   unsigned long j = jiffies;
   pr_info("---- work_handler %u jiffies\n", (unsigned)j);
   msleep(500);
@@ -52,7 +52,7 @@ static void work_handler(struct work_struct *w)
 
 static void delayed_work_handler(struct work_struct *w)
 {
-  /* FUNÇÃO UTILIZADA PELO DELAYED WORK HANDLER */
+  /* FUNÇAO UTILIZADA PELO DELAYED WORK HANDLER */
   unsigned long j = jiffies;
   pr_info("---- delayed_work_handler %u jiffies\n", (unsigned)j);
   msleep(500);
@@ -70,13 +70,13 @@ static DECLARE_DELAYED_WORK(delayed_workqueue_handler, delayed_work_handler);
 
 static void t_handler(unsigned long data)
 {
-  /* FUNÇÃO A SER EXECUTADA PELO KERNEL TIMER */
+  /* FUNÇAO A SER EXECUTADA PELO KERNEL TIMER */
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
 
 }
 
-/* DEFININDO O TIMER_HANDLER PARA EXECUTAR A FUNÇÃO T_HANDLER */
+/* DEFININDO O TIMER_HANDLER PARA EXECUTAR A FUNÇAO T_HANDLER */
 DEFINE_TIMER(timer_handler, t_handler, 0, 0);
 
 
@@ -88,7 +88,7 @@ static struct task_struct *td, *td_cpu;
 
 static int thread_handler(void *data)
 {
-  /* FUNÇÃO EXECUTADA PELA KTHREAD */
+  /* FUNÇAO EXECUTADA PELA KTHREAD */
   unsigned long j = jiffies;
   pr_info("---- thread_handler %u jiffies\n", (unsigned)j);
   ssleep(5);
@@ -99,7 +99,7 @@ static int thread_handler(void *data)
 
 static int thread_cpu_handler(void *data)
 {
-  /* FUNÇÃO EXECUTADA PELA KTHREAD NA CPU 1 */
+  /* FUNÇAO EXECUTADA PELA KTHREAD NA CPU 1 */
   unsigned long j = jiffies;
   pr_info("---- thread_cpu_handler %u jiffies\n", (unsigned)j);
   ssleep(5);
@@ -117,7 +117,7 @@ static int __init tasklets_workqueues_kthreads_init(void)
   /* TRANSFORMANDO JIFFIES EM SEGUNDOS */
   onesec = msecs_to_jiffies(1000 * 1);
 
-  pr_info("----Inicio da função init -- %u \n", (unsigned)j);
+  pr_info("----Inicio da funcao init -- %u \n", (unsigned)j);
 
    /* TASKLET */
 
@@ -154,13 +154,13 @@ static int __init tasklets_workqueues_kthreads_init(void)
   }
   else
   {
-    printk("falha na criação da thread\n");
+    printk("falha na criacao da thread\n");
   }
 
   /* kthread_bind  !! */
 
-  /* EXECUTANDO KTHREAD NA CPU 1, É UTILIZADA A FUNÇÃO CPU_TO_NODE PARA ADEQUAR AO PARAMETRO PEDIDO 
-  PELO FUNÇÃO KTHREAD */
+  /* EXECUTANDO KTHREAD NA CPU 1, É UTILIZADA A FUNÇAO CPU_TO_NODE PARA ADEQUAR AO PARAMETRO PEDIDO 
+  PELO FUNÇAO KTHREAD */
   td_cpu = kthread_create_on_node(thread_cpu_handler, 0, cpu_to_node(1), "cpu_thread_handler");
   if(td_cpu)
   {
@@ -169,12 +169,12 @@ static int __init tasklets_workqueues_kthreads_init(void)
   }
   else
   {
-    printk("falha na criação da thread para executar na cpu 1!\n");
+    printk("falha na criacao da thread para executar na cpu 1!\n");
   }
 
 
 
-  printk("Função init terminada\n");
+  printk("Funcao init terminada\n");
   return 0;
 }
 
