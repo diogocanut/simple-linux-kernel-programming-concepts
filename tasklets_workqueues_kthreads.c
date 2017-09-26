@@ -27,6 +27,7 @@ static void task_handler(unsigned long data)
   /* FUNÇAO UTILIZADA PELO HANDLER */
   unsigned long j = jiffies;
   pr_info("---- task_handler %u jiffies\n", (unsigned)j);
+  mdelay(500);
 
 }
 
@@ -73,7 +74,7 @@ static void t_handler(unsigned long data)
   /* FUNÇAO A SER EXECUTADA PELO KERNEL TIMER */
   unsigned long j = jiffies;
   pr_info("---- timer_handler %u jiffies\n", (unsigned)j);
-
+  mdelay(500);
 }
 
 /* DEFININDO O TIMER_HANDLER PARA EXECUTAR A FUNÇAO T_HANDLER */
