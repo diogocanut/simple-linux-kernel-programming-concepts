@@ -9,7 +9,7 @@
 #include <linux/kthread.h>
 #include <asm/topology.h>
 
-/* problema em sleep no timer e tasklet */
+
 
 
 /* declarando licenca e autor */
