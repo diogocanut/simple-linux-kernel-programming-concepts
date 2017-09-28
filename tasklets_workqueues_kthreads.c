@@ -85,6 +85,7 @@ DEFINE_TIMER(timer_handler, t_handler, 0, 0);
 
 /* PONTEIROS PARA AS KTHREADS */
 static struct task_struct *td, *td_cpu;
+static struct kthread_worker *td_delayed;
 
 
 static int thread_handler(void *data)
