@@ -174,19 +174,21 @@ static int __init tasklets_workqueues_kthreads_init(void)
   }
   
   /* CRIANDO KTHREAD WORKER */
+  /*
   td_delayed = kthread_create_worker(0,"delayed_kthread_handler");
   if(td_delayed)
   {
-     /* DELAYED KTHREAD, NÃO COMPLETO 
+      DELAYED KTHREAD, NÃO COMPLETO 
      kthread_queue_delayed_work(td_delayed,0, 5);
      kthread_destroy_worker(td_delayed); 
     printk("delayed kthread criada e deletada com sucesso!\n"); 
-    */
+    
   }
   else
   {
     printk("falha na criacao da delayed kthread!\n");
   }
+   */
 
   printk("Funcao init terminada\n");
   return 0;
